@@ -1,11 +1,11 @@
 {
   "name": "@vuna/react-scheduler",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Bitnoise/react-scheduler"
+    "url": "https://github.com/devnav2902/react-scheduler"
   },
   "keywords": [
     "scheduler",
@@ -16,8 +16,8 @@
     "calendar"
   ],
   "author": {
-    "name": "Bitnoise",
-    "url": "https://scheduler.bitnoise.pl/"
+    "name": "vuna",
+    "url": "https://github.com/devnav2902/"
   },
   "scripts": {
     "dev": "vite",
