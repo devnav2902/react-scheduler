@@ -34,5 +34,14 @@ export const calendarContext = createContext<CalendarContextType>({
   recordsThreshold: 0,
   config: {
     zoom: 0
+  },
+  leftHeaderRender: (props) => {
+    return null;
+  },
+  rightHeaderRender: (props) => {
+    return null;
+  },
+  centerHeaderRender: (props) => {
+    return null;
   }
 });

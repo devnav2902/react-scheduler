@@ -10,6 +10,15 @@ export const StyledInnerWrapper = styled.div`
 `;
 
 export const StyledCanvas = styled.canvas``;
+export const StyledCurrentHourLineCanvas = styled.canvas`
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+`;
 export const StyledCanvasHeader = styled.canvas``;
 
 export const StyledSpan = styled.span<StyledSpanProps>`

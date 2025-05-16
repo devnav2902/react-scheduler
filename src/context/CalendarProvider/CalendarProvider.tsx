@@ -20,6 +20,7 @@ import {
 } from "@/constants";
 import { getCanvasWidth } from "@/utils/getCanvasWidth";
 import { calendarContext } from "./calendarContext";
+
 import { CalendarProviderProps } from "./types";
 dayjs.extend(weekOfYear);
 dayjs.extend(dayOfYear);
@@ -35,6 +36,9 @@ const CalendarProvider = ({
   isLoading,
   config,
   defaultStartDate = dayjs(),
+  leftHeaderRender,
+  rightHeaderRender,
+  centerHeaderRender,
   onRangeChange,
   onFilterData,
   onClearFilterData
@@ -224,6 +228,7 @@ const CalendarProvider = ({
         handleGoToday,
         zoomIn,
         zoomOut,
+        changeZoom,
         zoom,
         isNextZoom,
         isPrevZoom,
@@ -236,7 +241,10 @@ const CalendarProvider = ({
         tilesCoords,
         updateTilesCoords,
         recordsThreshold: maxRecordsPerPage,
-        onClearFilterData
+        onClearFilterData,
+        centerHeaderRender,
+        leftHeaderRender,
+        rightHeaderRender
       }}>
       {children}
     </Provider>

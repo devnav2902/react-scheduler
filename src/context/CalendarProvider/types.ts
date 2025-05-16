@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
 import dayjs from "dayjs";
+import { ReactNode } from "react";
 import { Config, Coords, Day, SchedulerData, ZoomLevel } from "@/types/global";
 import { ParsedDatesRange } from "@/utils/getDatesRange";
 
@@ -9,11 +9,15 @@ export type CalendarContextType = {
   handleGoPrev: () => void;
   handleScrollPrev: () => void;
   handleGoToday: () => void;
+  changeZoom: (zoomLevel: number) => void;
   zoomIn: () => void;
   zoomOut: () => void;
   handleFilterData: () => void;
   updateTilesCoords: (coords: Coords[]) => void;
   onClearFilterData?: () => void;
+  leftHeaderRender?: (props: any) => ReactNode;
+  rightHeaderRender?: (props: any) => ReactNode;
+  centerHeaderRender?: (props: any) => ReactNode;
   data?: SchedulerData;
   tilesCoords: Coords[];
   zoom: ZoomLevel;
@@ -37,4 +41,7 @@ export type CalendarProviderProps = {
   onRangeChange?: (range: ParsedDatesRange) => void;
   onFilterData?: () => void;
   onClearFilterData?: () => void;
+  leftHeaderRender?: (props: any) => ReactNode;
+  rightHeaderRender?: (props: any) => ReactNode;
+  centerHeaderRender?: (props: any) => ReactNode;
 };

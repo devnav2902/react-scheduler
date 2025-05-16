@@ -1,13 +1,25 @@
 import { forwardRef, useCallback, useEffect, useRef } from "react";
 import { useTheme } from "styled-components";
-import { drawGrid } from "@/utils/drawGrid/drawGrid";
-import { boxHeight, canvasWrapperId, leftColumnWidth, outsideWrapperId } from "@/constants";
 import { Loader, Tiles } from "@/components";
+import {
+  boxHeight,
+  canvasWrapperId,
+  currentHourLineWrapperId,
+  leftColumnWidth,
+  outsideWrapperId
+} from "@/constants";
 import { useCalendar } from "@/context/CalendarProvider";
-import { resizeCanvas } from "@/utils/resizeCanvas";
+import { drawGrid } from "@/utils/drawGrid/drawGrid";
 import { getCanvasWidth } from "@/utils/getCanvasWidth";
+import { resizeCanvas } from "@/utils/resizeCanvas";
 import { GridProps } from "./types";
-import { StyledCanvas, StyledInnerWrapper, StyledSpan, StyledWrapper } from "./styles";
+import {
+  StyledCanvas,
+  StyledCurrentHourLineCanvas,
+  StyledInnerWrapper,
+  StyledSpan,
+  StyledWrapper
+} from "./styles";
 
 const Grid = forwardRef<HTMLDivElement, GridProps>(function Grid(
   { zoom, rows, data, onTileClick },
@@ -17,6 +29,7 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(function Grid(
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const refRight = useRef<HTMLSpanElement>(null);
   const refLeft = useRef<HTMLSpanElement>(null);
+  const lineCanvasRef = useRef<HTMLCanvasElement>(null);
 
   const theme = useTheme();
 
@@ -82,7 +95,8 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(function Grid(
       <StyledInnerWrapper ref={ref}>
         <StyledSpan position="left" ref={refLeft} />
         <Loader isLoading={isLoading} position="left" />
-        <StyledCanvas ref={canvasRef} />
+        <StyledCanvas ref={canvasRef} style={{ position: "relative", zIndex: 0 }} />
+        {/* <StyledCurrentHourLineCanvas id={currentHourLineWrapperId} ref={lineCanvasRef} /> */}
         <Tiles data={data} zoom={zoom} onTileClick={onTileClick} />
         <StyledSpan ref={refRight} position="right" />
         <Loader isLoading={isLoading} position="right" />

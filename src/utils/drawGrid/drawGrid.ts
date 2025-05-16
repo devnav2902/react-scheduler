@@ -1,9 +1,10 @@
 import { Day } from "@/types/global";
-import { canvasWrapperId } from "@/constants";
+import { canvasWrapperId, currentHourLineWrapperId } from "@/constants";
 import { Theme } from "@/styles";
 import { drawMonthlyView } from "./drawMonthlyView";
 import { drawYearlyView } from "./drawYearlyView";
 import { drawHourlyView } from "./drawHourlyView";
+import { drawCurrentHourLine } from "./drawCurrentHourLine";
 
 export const drawGrid = (
   ctx: CanvasRenderingContext2D,
@@ -24,8 +25,17 @@ export const drawGrid = (
     case 1:
       drawMonthlyView(ctx, rows, cols, parsedStartDate, theme);
       break;
-    case 2:
+    case 2: {
       drawHourlyView(ctx, rows, cols, parsedStartDate, theme);
+
+      const currentHourLineWrapper = document.getElementById(
+        currentHourLineWrapperId
+      ) as HTMLCanvasElement;
+
+      if (currentHourLineWrapper) {
+        drawCurrentHourLine(currentHourLineWrapper, rows, cols, parsedStartDate);
+      }
       break;
+    }
   }
 };

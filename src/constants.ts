@@ -33,6 +33,7 @@ export const monthsInYear = 12;
 export const hoursInDay = 24;
 export const canvasHeaderWrapperId = "reactSchedulerCanvasHeaderWrapper";
 export const canvasWrapperId = "reactSchedulerCanvasWrapper";
+export const currentHourLineWrapperId = "reactSchedulerCurrentHourLineWrapper";
 export const outsideWrapperId = prefixId;
 export const tileYOffset = 4;
 export const tileHeight = 48;

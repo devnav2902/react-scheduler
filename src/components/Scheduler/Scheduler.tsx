@@ -14,12 +14,15 @@ const Scheduler = ({
   data,
   config,
   startDate,
+  isLoading,
   onRangeChange,
   onTileClick,
   onFilterData,
   onClearFilterData,
   onItemClick,
-  isLoading
+  centerHeaderRender,
+  leftHeaderRender,
+  rightHeaderRender
 }: SchedulerProps) => {
   const appConfig: Config = useMemo(
     () => ({
@@ -78,7 +81,10 @@ const Scheduler = ({
             onRangeChange={onRangeChange}
             defaultStartDate={defaultStartDate}
             onFilterData={onFilterData}
-            onClearFilterData={onClearFilterData}>
+            onClearFilterData={onClearFilterData}
+            centerHeaderRender={centerHeaderRender}
+            leftHeaderRender={leftHeaderRender}
+            rightHeaderRender={rightHeaderRender}>
             <StyledOutsideWrapper
               showScroll={!!data.length}
               id={outsideWrapperId}

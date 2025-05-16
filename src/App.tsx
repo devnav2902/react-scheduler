@@ -66,8 +66,40 @@ function App() {
           isLoading={false}
           onTileClick={handleTileClick}
           onFilterData={handleFilterData}
-          config={{ zoom: 0, maxRecordsPerPage: maxRecordsPerPage, showThemeToggle: true }}
+          config={{
+            zoom: 2,
+            maxRecordsPerPage: maxRecordsPerPage,
+            showThemeToggle: false,
+            lang: "vi"
+          }}
           onItemClick={(data) => console.log("clicked: ", data)}
+          leftHeaderRender={(props) => (
+            <>
+              <div>
+                <button onClick={props.handleGoPrev}>PREV</button>
+              </div>
+              <div>
+                <button onClick={props.handleGoToday}>TODAY</button>
+              </div>
+              <div>
+                <button onClick={props.handleGoNext}>NEXT</button>
+              </div>
+            </>
+          )}
+          centerHeaderRender={(props) => <></>}
+          rightHeaderRender={(props) => (
+            <>
+              <div>
+                <button onClick={() => props.changeZoom(0)}>Week</button>
+              </div>
+              <div>
+                <button onClick={() => props.changeZoom(1)}>Day</button>
+              </div>
+              <div>
+                <button onClick={() => props.changeZoom(2)}>Hour</button>
+              </div>
+            </>
+          )}
         />
       ) : (
         <StyledSchedulerFrame>

@@ -51,7 +51,7 @@
     ],
     "filenames/match-exported": 2,
     "import/no-internal-modules": [
-      "error",
+      "warn",
       {
         "forbid": ["@/components/**"]
       }
