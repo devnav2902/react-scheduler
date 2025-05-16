@@ -12,6 +12,7 @@ export const calendarContext = createContext<CalendarContextType>({
   zoomOut: () => {},
   handleFilterData: () => {},
   updateTilesCoords: () => {},
+  changeZoom: () => {},
   tilesCoords: [],
   zoom: 0,
   isNextZoom: false,
