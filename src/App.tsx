@@ -1,11 +1,11 @@
 import { useCallback, useMemo, useState } from "react";
 import dayjs from "dayjs";
-import { createMockData } from "./mock/appMock";
 import { ParsedDatesRange } from "./utils/getDatesRange";
 import { ConfigFormValues, SchedulerProjectData } from "./types/global";
 import ConfigPanel from "./components/ConfigPanel";
 import { StyledSchedulerFrame } from "./styles";
 import { Scheduler } from ".";
+import { createMockData } from "./mock/appMock";
 
 function App() {
   const [values, setValues] = useState<ConfigFormValues>({
@@ -111,6 +111,33 @@ function App() {
             onTileClick={handleTileClick}
             onFilterData={handleFilterData}
             onItemClick={(data) => console.log("clicked: ", data)}
+            leftHeaderRender={(props) => (
+              <>
+                <div>
+                  <button onClick={props.handleGoPrev}>PREV</button>
+                </div>
+                <div>
+                  <button onClick={props.handleGoToday}>TODAY</button>
+                </div>
+                <div>
+                  <button onClick={props.handleGoNext}>NEXT</button>
+                </div>
+              </>
+            )}
+            centerHeaderRender={(props) => <></>}
+            rightHeaderRender={(props) => (
+              <>
+                <div>
+                  <button onClick={() => props.changeZoom(0)}>Week</button>
+                </div>
+                <div>
+                  <button onClick={() => props.changeZoom(1)}>Day</button>
+                </div>
+                <div>
+                  <button onClick={() => props.changeZoom(2)}>Hour</button>
+                </div>
+              </>
+            )}
           />
         </StyledSchedulerFrame>
       )}

@@ -5,7 +5,7 @@ export const prefixId = "reactSchedulerOutsideWrapper";
 export const GlobalStyle = createGlobalStyle`
 
   #${prefixId} {
-    font-family: 'Inter', sans-serif;
+    font-family: inherit;
     box-sizing: border-box;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;

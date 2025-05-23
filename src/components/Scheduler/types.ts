@@ -30,6 +30,7 @@ export type SchedulerProps = {
   isLoading?: boolean;
   config?: Config;
   startDate?: string;
+  scrollToLoadData?: boolean;
   onRangeChange?: (range: ParsedDatesRange) => void;
   onTileClick?: (data: SchedulerProjectData) => void;
   onFilterData?: () => void;

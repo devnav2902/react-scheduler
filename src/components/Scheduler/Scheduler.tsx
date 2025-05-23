@@ -15,6 +15,7 @@ const Scheduler = ({
   config,
   startDate,
   isLoading,
+  scrollToLoadData,
   onRangeChange,
   onTileClick,
   onFilterData,
@@ -84,7 +85,8 @@ const Scheduler = ({
             onClearFilterData={onClearFilterData}
             centerHeaderRender={centerHeaderRender}
             leftHeaderRender={leftHeaderRender}
-            rightHeaderRender={rightHeaderRender}>
+            rightHeaderRender={rightHeaderRender}
+            scrollToLoadData={scrollToLoadData}>
             <StyledOutsideWrapper
               showScroll={!!data.length}
               id={outsideWrapperId}

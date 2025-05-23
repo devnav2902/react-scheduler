@@ -1,5 +1,6 @@
 import { LocaleType } from "@/context/LocaleProvider/types";
 import { ColorType } from "@/styles";
+import { ReactNode } from "react";
 
 export const allZoomLevel = [0, 1, 2] as const;
 
@@ -84,7 +85,7 @@ export type PaginatedSchedulerRow = {
 };
 
 export type SchedulerRowLabel = {
-  icon: string;
+  icon: string | ReactNode;
   title: string;
   subtitle: string;
 };
@@ -112,7 +113,7 @@ export type SchedulerProjectData = {
   /**
    * Subtitle of item. Optional
    */
-  subtitle?: string;
+  subtitle?: string | ReactNode;
   /**
    * Short description displayed on tile. Optional
    */

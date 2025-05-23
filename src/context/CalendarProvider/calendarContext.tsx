@@ -13,6 +13,7 @@ export const calendarContext = createContext<CalendarContextType>({
   handleFilterData: () => {},
   updateTilesCoords: () => {},
   changeZoom: () => {},
+  scrollToLoadData: false,
   tilesCoords: [],
   zoom: 0,
   isNextZoom: false,

@@ -1,6 +1,6 @@
 import { prefixId } from "./styles";
 
-export const dayWidth = 50;
+export const dayWidth = 180;
 export const headerMonthHeight = 24;
 export const headerWeekHeight = 16;
 export const headerDayHeight = 40;
@@ -9,7 +9,7 @@ export const weekWidth = 84;
 export const boxHeight = 56;
 export const leftColumnWidth = 196;
 export const singleDayWidth = 12;
-export const zoom2ColumnWidth = 50;
+export const zoom2ColumnWidth = 180;
 export const zoom2HeaderTopRowHeight = 24;
 export const zoom2HeaderMiddleRowHeight = 16;
 export const zoom2HeaderBottomRowHeight = 40;
@@ -45,7 +45,7 @@ export const formFieldsIds = {
   maxRecordsPerPage: "maxRecordsPerPage",
   isFullscreen: "isFullscreen"
 };
-export const businessDays = 5;
+export const businessDays = 6;
 export const maxHoursPerWeek = 40;
 export const maxHoursPerDay = 8;
 export const topRowTextYPos = headerMonthHeight / 2 + 2;

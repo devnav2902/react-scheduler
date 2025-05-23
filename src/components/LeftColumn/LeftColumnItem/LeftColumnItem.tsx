@@ -13,14 +13,17 @@ import { LeftColumnItemProps } from "./types";
 const LeftColumnItem: FC<LeftColumnItemProps> = ({ id, item, rows, onItemClick }) => {
   return (
     <StyledWrapper
-      title={item.title + " | " + item.subtitle}
       clickable={typeof onItemClick === "function"}
       rows={rows}
       onClick={() => onItemClick?.({ id, label: item })}>
       <StyledInnerWrapper>
         <StyledImageWrapper>
           {item.icon ? (
-            <StyledImage src={item.icon} alt="Icon"></StyledImage>
+            typeof item.icon === "string" ? (
+              <StyledImage src={item.icon} alt="Icon"></StyledImage>
+            ) : (
+              item.icon
+            )
           ) : (
             <Icon iconName="defaultAvatar" />
           )}

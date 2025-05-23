@@ -41,7 +41,8 @@ const CalendarProvider = ({
   centerHeaderRender,
   onRangeChange,
   onFilterData,
-  onClearFilterData
+  onClearFilterData,
+  scrollToLoadData = false
 }: CalendarProviderProps) => {
   const { zoom: configZoom, maxRecordsPerPage = 50 } = config;
   const [zoom, setZoom] = useState<ZoomLevel>(configZoom);
@@ -244,7 +245,8 @@ const CalendarProvider = ({
         onClearFilterData,
         centerHeaderRender,
         leftHeaderRender,
-        rightHeaderRender
+        rightHeaderRender,
+        scrollToLoadData
       }}>
       {children}
     </Provider>

@@ -18,6 +18,7 @@ export type CalendarContextType = {
   leftHeaderRender?: (props: any) => ReactNode;
   rightHeaderRender?: (props: any) => ReactNode;
   centerHeaderRender?: (props: any) => ReactNode;
+  scrollToLoadData?: boolean;
   data?: SchedulerData;
   tilesCoords: Coords[];
   zoom: ZoomLevel;
@@ -44,4 +45,5 @@ export type CalendarProviderProps = {
   leftHeaderRender?: (props: any) => ReactNode;
   rightHeaderRender?: (props: any) => ReactNode;
   centerHeaderRender?: (props: any) => ReactNode;
+  scrollToLoadData?: boolean;
 };

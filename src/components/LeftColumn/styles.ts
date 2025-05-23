@@ -41,7 +41,7 @@ export const StyledInput = styled.input`
 
 export const StyledInputWrapper = styled.div<StyledInputWrapperProps>`
   margin-left: 10px;
-  height: 36px;
+  height: 30px;
   width: calc(100% - 20px); //20px = 10px margin each side
   background-color: ${({ theme }) => theme.colors.primary};
   border: 1px solid
@@ -54,7 +54,7 @@ export const StyledInputWrapper = styled.div<StyledInputWrapperProps>`
   svg {
     margin-left: auto;
     margin-right: 12px;
-    height: 24px;
-    width: 24px;
+    height: 16px;
+    width: 16px;
   }
 `;
