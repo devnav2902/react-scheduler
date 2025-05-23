@@ -23,7 +23,7 @@ export const drawZoom2MonthsOnTop = (
   const endMonth = endDate.add(1, "day").month();
   const monthsInRange = startMonth === endMonth ? 1 : 2;
 
-  let xPos = 0.5 * zoom2ColumnWidth;
+  let xPos = -0.5 * zoom2ColumnWidth;
 
   for (let i = 0; i < monthsInRange; i++) {
     const startDateHour = dayjs(

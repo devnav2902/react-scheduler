@@ -26,7 +26,7 @@ export const drawCurrentHourLine = (
 
   const now = dayjs();
   const start = dayjs(
-    `${parsedStartDate.year}-${parsedStartDate.month + 1}-${parsedStartDate.dayOfMonth + 1}T${
+    `${parsedStartDate.year}-${parsedStartDate.month + 1}-${parsedStartDate.dayOfMonth}T${
       parsedStartDate.hour
     }:00:00`
   );
