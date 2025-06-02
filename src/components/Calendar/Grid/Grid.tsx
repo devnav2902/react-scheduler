@@ -98,7 +98,11 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(function Grid(
         <Loader isLoading={isLoading} position="left" />
         <StyledCanvas ref={canvasRef} style={{ position: "relative", zIndex: 0 }} />
         {zoom === 2 && (
-          <StyledCurrentHourLineCanvas id={currentHourLineWrapperId} ref={lineCanvasRef} />
+          <StyledCurrentHourLineCanvas
+            className="current-hour-line"
+            id={currentHourLineWrapperId}
+            ref={lineCanvasRef}
+          />
         )}
         <Tiles data={data} zoom={zoom} onTileClick={onTileClick} />
         <StyledSpan ref={refRight} position="right" />

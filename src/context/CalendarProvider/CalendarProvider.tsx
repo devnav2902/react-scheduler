@@ -22,6 +22,7 @@ import { getCanvasWidth } from "@/utils/getCanvasWidth";
 import { calendarContext } from "./calendarContext";
 
 import { CalendarProviderProps } from "./types";
+
 dayjs.extend(weekOfYear);
 dayjs.extend(dayOfYear);
 dayjs.extend(isoWeek);
@@ -36,6 +37,7 @@ const CalendarProvider = ({
   isLoading,
   config,
   defaultStartDate = dayjs(),
+  headerRender,
   leftHeaderRender,
   rightHeaderRender,
   centerHeaderRender,
@@ -246,6 +248,7 @@ const CalendarProvider = ({
         centerHeaderRender,
         leftHeaderRender,
         rightHeaderRender,
+        headerRender,
         scrollToLoadData
       }}>
       {children}

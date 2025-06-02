@@ -23,7 +23,8 @@ const Scheduler = ({
   onItemClick,
   centerHeaderRender,
   leftHeaderRender,
-  rightHeaderRender
+  rightHeaderRender,
+  headerRender
 }: SchedulerProps) => {
   const appConfig: Config = useMemo(
     () => ({
@@ -86,7 +87,8 @@ const Scheduler = ({
             centerHeaderRender={centerHeaderRender}
             leftHeaderRender={leftHeaderRender}
             rightHeaderRender={rightHeaderRender}
-            scrollToLoadData={scrollToLoadData}>
+            scrollToLoadData={scrollToLoadData}
+            headerRender={headerRender}>
             <StyledOutsideWrapper
               showScroll={!!data.length}
               id={outsideWrapperId}

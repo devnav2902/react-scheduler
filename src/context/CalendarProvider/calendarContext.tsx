@@ -45,5 +45,8 @@ export const calendarContext = createContext<CalendarContextType>({
   },
   centerHeaderRender: (props) => {
     return null;
+  },
+  headerRender: (props) => {
+    return null;
   }
 });

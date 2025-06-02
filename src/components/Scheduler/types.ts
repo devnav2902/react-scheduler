@@ -39,6 +39,7 @@ export type SchedulerProps = {
   leftHeaderRender?: (props: HeaderCustomProps) => ReactNode;
   rightHeaderRender?: (props: HeaderCustomProps) => ReactNode;
   centerHeaderRender?: (props: HeaderCustomProps) => ReactNode;
+  headerRender?: (props: HeaderCustomProps) => ReactNode;
 };
 
 export type StyledOutsideWrapperProps = {
