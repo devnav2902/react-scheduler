@@ -23,6 +23,7 @@ export type HeaderCustomProps = Pick<
   config?: Config;
   isNextZoom?: boolean;
   isPrevZoom?: boolean;
+  range?: ParsedDatesRange;
 };
 
 export type SchedulerProps = {

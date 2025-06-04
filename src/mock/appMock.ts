@@ -62,7 +62,7 @@ export const generateProjects = (
     const projectsPerYear = Math.ceil(Math.random() * maxProjectsPerYear);
 
     for (let projectIndex = 0; projectIndex < projectsPerYear; projectIndex++) {
-      const { startDate, endDate } = getRandomDates(yearIndex);
+      const { startDate, endDate } = getRandomDates();
       data.push({
         id: faker.datatype.uuid(),
         startDate,
