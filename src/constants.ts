@@ -15,7 +15,7 @@ export const zoom2HeaderMiddleRowHeight = 16;
 export const zoom2HeaderBottomRowHeight = 40;
 export const zoom2HeaderHeight =
   zoom2HeaderTopRowHeight + zoom2HeaderMiddleRowHeight + zoom2HeaderBottomRowHeight;
-export const zoom2ButtonJump = 1;
+export const zoom2ButtonJump = 24;
 export const weeksInYear = 52;
 export const navHeight = 44;
 export const fonts = {

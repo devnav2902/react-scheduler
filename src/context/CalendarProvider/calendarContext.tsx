@@ -1,6 +1,7 @@
 import { createContext } from "react";
 import dayjs from "dayjs";
 import { CalendarContextType } from "./types";
+import { ParsedDatesRange } from "@/utils/getDatesRange";
 
 export const calendarContext = createContext<CalendarContextType>({
   handleGoNext: () => {},
@@ -37,6 +38,7 @@ export const calendarContext = createContext<CalendarContextType>({
   config: {
     zoom: 0
   },
+  range: { startDate: new Date(), endDate: new Date() } as ParsedDatesRange,
   leftHeaderRender: (props) => {
     return null;
   },

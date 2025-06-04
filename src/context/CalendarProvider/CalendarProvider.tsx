@@ -67,13 +67,13 @@ const CalendarProvider = ({
         case "back":
           return outsideWrapper.current?.scrollTo({
             behavior,
-            left: canvasWidth / 3
+            left: canvasWidth / 4
           });
 
         case "forward":
           return outsideWrapper.current?.scrollTo({
             behavior,
-            left: canvasWidth / 3
+            left: canvasWidth / 4
           });
 
         case "middle": {
@@ -163,10 +163,12 @@ const CalendarProvider = ({
   const handleGoNext = () => {
     if (isLoading) return;
 
-    setDate((prev) =>
-      zoom === 2 ? prev.add(zoom2ButtonJump, "hours") : prev.add(buttonWeeksJump, "weeks")
-    );
-    onRangeChange?.(range);
+    // setDate((prev) =>
+    //   zoom === 2 ? prev.add(zoom2ButtonJump, "hours") : prev.add(buttonWeeksJump, "weeks")
+    // );
+    // onRangeChange?.(range);
+
+    handleScrollNext();
   };
 
   const handleScrollNext = useCallback(() => {
@@ -181,10 +183,12 @@ const CalendarProvider = ({
   const handleGoPrev = () => {
     if (isLoading) return;
 
-    setDate((prev) =>
-      zoom === 2 ? prev.subtract(zoom2ButtonJump, "hours") : prev.subtract(buttonWeeksJump, "weeks")
-    );
-    onRangeChange?.(range);
+    // setDate((prev) =>
+    //   zoom === 2 ? prev.subtract(zoom2ButtonJump, "hours") : prev.subtract(buttonWeeksJump, "weeks")
+    // );
+    // onRangeChange?.(range);
+
+    handleScrollPrev();
   };
 
   const handleScrollPrev = useCallback(() => {
@@ -192,7 +196,7 @@ const CalendarProvider = ({
     loadMore("back");
     debounce(() => {
       moveHorizontalScroll("back");
-    }, 300)();
+    }, 100)();
   }, [isInitialized, isLoading, loadMore, moveHorizontalScroll]);
 
   const handleGoToday = useCallback(() => {
@@ -201,7 +205,7 @@ const CalendarProvider = ({
     loadMore("middle");
     debounce(() => {
       moveHorizontalScroll("middle", "smooth");
-    }, 300)();
+    }, 100)();
   }, [isLoading, loadMore, moveHorizontalScroll]);
 
   const zoomIn = () => changeZoom(zoom + 1);
@@ -249,7 +253,8 @@ const CalendarProvider = ({
         leftHeaderRender,
         rightHeaderRender,
         headerRender,
-        scrollToLoadData
+        scrollToLoadData,
+        range
       }}>
       {children}
     </Provider>

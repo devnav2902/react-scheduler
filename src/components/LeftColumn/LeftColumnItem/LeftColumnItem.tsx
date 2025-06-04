@@ -29,7 +29,9 @@ const LeftColumnItem: FC<LeftColumnItemProps> = ({ id, item, rows, onItemClick }
           )}
         </StyledImageWrapper>
         <StyledTextWrapper>
-          <StyledText isMain>{item.title}</StyledText>
+          <StyledText isMain title={item.title}>
+            {item.title}
+          </StyledText>
           <StyledText>{item.subtitle}</StyledText>
         </StyledTextWrapper>
       </StyledInnerWrapper>

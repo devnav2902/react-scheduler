@@ -8,7 +8,7 @@ export const StyledWrapper = styled.div`
 
 export const StyledText = styled.p`
   position: absolute;
-  top: 75%;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 20px;

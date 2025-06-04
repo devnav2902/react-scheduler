@@ -12,14 +12,31 @@ export const mockedOnRangeChange = (range: ParsedDatesRange, data: SchedulerData
 const getRandomWords = (amount?: number) =>
   amount ? faker.random.words(amount) : faker.random.word();
 
-const getRandomDates = (year: number) => {
-  const startDate = faker.date.between(new Date(year, 0, 1), new Date(year + 1, 0, 1));
-  const endDate = faker.date.between(
-    startDate,
-    new Date(year + Math.ceil(Math.random() * 4), 0, 1)
+const getRandomDates = (): { startDate: Date; endDate: Date } => {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+  const day = now.getDate();
+
+  // Define start and end range
+  const startRange = new Date(year, month, day - 1, 22, 0, 0); // Yesterday 22:00:00
+  const endRange = new Date(year, month, day + 1, 2, 0, 0); // Tomorrow 02:00:00
+
+  // Random start time within the range
+  const randomStartTime = new Date(
+    startRange.getTime() + Math.random() * (endRange.getTime() - startRange.getTime())
   );
 
-  return { startDate, endDate };
+  // Random duration: 1–3 hours in milliseconds
+  const durationMs = (1 + Math.floor(Math.random() * 3)) * 60 * 60 * 1000;
+
+  // Calculate endDate and clamp if it exceeds endRange
+  let endDate = new Date(randomStartTime.getTime() + durationMs);
+  if (endDate > endRange) {
+    endDate = endRange;
+  }
+
+  return { startDate: randomStartTime, endDate };
 };
 
 export const generateProjects = (

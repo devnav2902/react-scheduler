@@ -32,6 +32,7 @@ export type CalendarContextType = {
   dayOfYear: number;
   recordsThreshold: number;
   config: Config;
+  range: ParsedDatesRange;
 };
 
 export type CalendarProviderProps = {
@@ -48,4 +49,5 @@ export type CalendarProviderProps = {
   centerHeaderRender?: (props: any) => ReactNode;
   headerRender?: (props: any) => ReactNode;
   scrollToLoadData?: boolean;
+  range?: ParsedDatesRange;
 };

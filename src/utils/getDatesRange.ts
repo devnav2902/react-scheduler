@@ -15,28 +15,21 @@ export const getDatesRange = (date: dayjs.Dayjs, zoom: number): DatesRange => {
   const colsOffset = getCols(zoom) / 2;
 
   let startDate;
-  switch (zoom) {
-    case 1:
-      startDate = date.subtract(colsOffset, "days");
-      break;
-    case 2:
-      startDate = date.subtract(colsOffset, "hours");
-      break;
-    default:
-      startDate = date.subtract(colsOffset, "weeks");
-      break;
-  }
-
   let endDate;
+
   switch (zoom) {
     case 1:
-      endDate = date.add(colsOffset, "days");
+      startDate = date.subtract(colsOffset, "days").startOf("day");
+      endDate = date.add(colsOffset, "days").endOf("day");
       break;
     case 2:
-      endDate = date.add(colsOffset, "hours");
+      // Lock to a single day
+      startDate = date.startOf("day");
+      endDate = date.endOf("day");
       break;
     default:
-      endDate = date.add(colsOffset, "weeks");
+      startDate = date.subtract(colsOffset, "weeks").startOf("week");
+      endDate = date.add(colsOffset, "weeks").endOf("week");
       break;
   }
 

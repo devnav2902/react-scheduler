@@ -33,7 +33,8 @@ const Topbar: FC<TopbarProps> = ({ width, showThemeToggle, toggleTheme }) => {
     centerHeaderRender,
     leftHeaderRender,
     rightHeaderRender,
-    headerRender
+    headerRender,
+    range
   } = useCalendar();
   const { colors } = useTheme();
   const { filterButtonState = -1 } = config;
@@ -44,6 +45,7 @@ const Topbar: FC<TopbarProps> = ({ width, showThemeToggle, toggleTheme }) => {
   };
 
   const calendarConfig: HeaderCustomProps = {
+    range,
     data,
     config,
     isNextZoom,
