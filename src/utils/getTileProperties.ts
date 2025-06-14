@@ -24,7 +24,10 @@ export const getTileProperties = (
       parsedResourceStartDate = dayjs(resourceStartDate);
       parsedResourceEndDate = dayjs(resourceEndDate);
       parsedStartDate = dayjs(startDate).hour(rangeStartHour).minute(0);
-      parsedEndDate = dayjs(endDate).hour(rangeEndHour).minute(0);
+      // parsedEndDate = dayjs(endDate).hour(rangeEndHour).minute(0);
+      // this shows the tile ends prematurely at the 23:00 column even though the endDate is 01:22:27 (next day). That confirms the tile width is being clipped, most likely because your range.endDate only covers up to midnight (00:00) or 23:59 of the same day.
+      parsedEndDate = dayjs(startDate).startOf("day").add(1, "day").add(3, "hour");
+
       break;
     }
     default: {

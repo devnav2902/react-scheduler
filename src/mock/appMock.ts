@@ -49,9 +49,7 @@ export const generateProjects = (
     .subtract(Math.floor(years / 2), "years")
     .get("year");
 
-  const endYear = dayjs()
-    .add(Math.floor(years / 2), "years")
-    .get("year");
+  const endYear = dayjs().add(Math.floor(5), "years").get("year");
 
   const data = [];
   const bgColor = `rgb(${Math.ceil(Math.random() * 255)},${Math.ceil(
