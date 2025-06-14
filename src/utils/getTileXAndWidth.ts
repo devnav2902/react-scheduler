@@ -17,10 +17,10 @@ export const getTileXAndWidth = (item: DatesRange, range: DatesRange, zoom: numb
     let position;
     switch (zoom) {
       case 2:
-        // position =
-        //   (item.startDate.diff(range.startDate, "minute") / minutesInHour + 1) * cellWidth -
-        //   cellWidth / 2;
-        position = (item.startDate.diff(range.startDate, "minute") / minutesInHour) * cellWidth;
+        position =
+          (item.startDate.diff(range.startDate, "minute") / minutesInHour + 1) * cellWidth -
+          cellWidth / 2;
+        // position = (item.startDate.diff(range.startDate, "minute") / minutesInHour) * cellWidth;
 
         break;
       default: {

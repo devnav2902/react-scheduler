@@ -12,7 +12,10 @@ export const drawHourlyView = (
   startDate: Day,
   theme: Theme
 ) => {
-  const date = dayjs(`${startDate.year}-${startDate.month + 1}-${startDate.dayOfMonth + 1}`);
+  // const date = dayjs(`${startDate.year}-${startDate.month + 1}-${startDate.dayOfMonth + 1}`);
+
+  const date = dayjs(`${startDate.year}-${startDate.month + 1}-${startDate.dayOfMonth}T00:00:00`);
+
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j <= cols; j++) {
       let hour;

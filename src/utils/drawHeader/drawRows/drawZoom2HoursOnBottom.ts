@@ -19,9 +19,14 @@ export const drawZoom2HoursOnBottom = (
   let xPos = 0;
   const yPos = zoom2HeaderTopRowHeight + zoom2HeaderMiddleRowHeight;
 
+  // const startDateHour = dayjs(
+  //   `${startDate.year}-${startDate.month + 1}-${startDate.dayOfMonth}T${startDate.hour}:00:00`
+  // );
+
   const startDateHour = dayjs(
-    `${startDate.year}-${startDate.month + 1}-${startDate.dayOfMonth}T${startDate.hour}:00:00`
+    `${startDate.year}-${startDate.month + 1}-${startDate.dayOfMonth}T00:00:00`
   );
+
   const width = zoom2ColumnWidth;
 
   for (let i = 0; i < cols; i++) {
