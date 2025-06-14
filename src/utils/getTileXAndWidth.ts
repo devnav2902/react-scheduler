@@ -24,7 +24,8 @@ export const getTileXAndWidth = (item: DatesRange, range: DatesRange, zoom: numb
 
         break;
       default: {
-        position = (item.startDate.diff(range.startDate, "day") + 1) * cellWidth;
+        position = item.startDate.diff(range.startDate, "day") * cellWidth;
+        // position = (item.startDate.diff(range.startDate, "day") + 1) * cellWidth;
       }
     }
     return Math.max(0, position);
